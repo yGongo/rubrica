@@ -2,27 +2,46 @@
 
 namespace Eugenio.Malenchi._4i.WPFtelefono
 {
-    internal class Persona
-    {
-        public int idPersona { get; set; }
-        public string Nome { get; set; }
-        public string Cognome { get; set; }
-
-        public Persona() { }
-
-        public Persona(string riga)
+    
+        enum Type
         {
-            string[] campi = riga.Split(';');
+            Email,
+            Telefono,
+            Nome,
+            Cognome,
+            Web,
+            Instagram,
+            Telegram,
+            Facebook
+        }
+        internal class Persona
+        {
+            private int idPersona;
+            private Type tipo;
+            private string valore;
 
-            if (campi.Length >= 3)
+            public Persona(int idPersona, Type tipo, string valore)
             {
-                if (int.TryParse(campi[0], out int id))
-                {
-                    idPersona = id;
-                }
-                Nome = campi[1];
-                Cognome = campi[2];
+                this.idPersona = idPersona;
+                this.tipo = tipo;
+                this.valore = valore;
+            }
+
+            public int IdPersona
+            {
+                get { return idPersona; }
+                set { idPersona = value; }
+            }
+
+            public Type Tipo
+            {
+                get { return tipo; }
+            }
+
+            public string Valore
+            {
+                get { return valore; }
             }
         }
-    }
+
 }

@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Eugenio.Malenchi._4i.WPFtelefono"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        Title="Rubrica" Height="720" Width="1280"
+        FontFamily="Microsoft Sans Serif"
+        WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgPersone" LoadingRow="dgPersone_LoadingRow"  AutoGenerateColumns="True"/>
-        <DataGrid x:Name="dgContatti" LoadingRow="dgContatti_LoadingRow"  AutoGenerateColumns="True" Grid.Column="1"/>
-
+        <Grid Grid.Row="0" Grid.Column="0">
+            <DataGrid x:Name ="dg" LoadingRow="dg_LoadingRow" SelectionChanged="dg1_LoadingRow">
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <DataGrid x:Name="dg1"></DataGrid>
+        </Grid>
     </Grid>
 </Window>
